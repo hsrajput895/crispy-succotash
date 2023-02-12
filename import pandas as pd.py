@@ -1,0 +1,20 @@
+import pandas as pd 
+
+users = pd.read_csv('https://raw.githubusercontent.com/justmarkham/DAT8/master/data/u.user', index_col="user_id", sep = '|')
+print(users)
+print(users.head(10))
+print(users.tail(10))
+print(users.shape[0])
+
+print(users.shape[1])
+print(users.columns)
+print(users.index)
+print(users.dtypes)
+print(users["occupation"])
+print(users["occupation"].value_counts().count())
+print(users["occupation"].value_counts().sort_values(ascending=False).head(1))
+print(users.info())
+print(users.describe(include="all"))
+print(users.occupation.describe())
+print(users.age.mean())
+print(users.age.value_counts().sort_values(ascending=False).tail(1))
